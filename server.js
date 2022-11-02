@@ -10,6 +10,9 @@ app.use(cors());
 
 connectDB();
 
+app.get("/", (req, res) => {
+  res.json("Server is running ");
+});
 app.use("/user", userRouter);
 app.use("/note", noteRoute);
 

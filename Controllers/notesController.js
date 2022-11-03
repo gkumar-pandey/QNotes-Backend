@@ -27,8 +27,10 @@ const updateNote = async (req, res) => {
   };
 
   try {
-    await noteModel.findByIdAndUpdate(id, newNote, { new: true });
-    res.status(200).json(newNote);
+    const updatedNote = await noteModel.findByIdAndUpdate(id, newNote, {
+      new: true,
+    });
+    res.status(200).json(updateNote);
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "something went wrong" });

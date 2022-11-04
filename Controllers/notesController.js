@@ -21,6 +21,7 @@ const updateNote = async (req, res) => {
   const id = req.params.id;
   const { title, description } = req.body;
   const newNote = {
+    _id: id,
     title: title,
     description: description,
     userId: req.userId,
